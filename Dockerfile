@@ -6,7 +6,7 @@ ENV TZ=America/New_York
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN DEBIAN_FRONTEND=noninteractive apt update && \
-     apt install -y tar git htop iftop vim tzdata
+     apt install -y tar git htop iftop vim tzdata rdfind symlinks
 
 RUN pip3 install git+https://github.com/aliparlakci/bulk-downloader-for-reddit.git@development
 
