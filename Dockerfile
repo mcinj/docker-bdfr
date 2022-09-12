@@ -1,10 +1,12 @@
 FROM python:3.9-bullseye
 
-ENV TZ=America/New_York
 ARG S6_VER="3.1.2.1"
+ENV TZ=America/New_York
 
-RUN  apt update && \
-     apt install -y tar git htop iftop vim
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN DEBIAN_FRONTEND=noninteractive apt update && \
+     apt install -y tar git htop iftop vim tzdata
 
 RUN pip3 install git+https://github.com/aliparlakci/bulk-downloader-for-reddit.git@development
 
