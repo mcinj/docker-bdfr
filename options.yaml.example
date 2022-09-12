@@ -1,0 +1,9 @@
+skip: [mp4, avi, mov]
+file_scheme: "{REDDITOR}_{POSTID}_{DATE}_{TITLE}"
+limit: 30
+sort: new
+no_dupes: true
+# search_existing: true # DON'T ENABLE as dupes across the entire download directory are removed and symlinked after bdfr runs
+subreddit:
+  - earthporn
+  - gifs
